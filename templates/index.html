@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/tailwind.css') }}">
+    <script src="{{ url_for('static', filename='js/dist/index.js') }}" defer type="module"></script>
+    <title>TODO List</title>
+</head>
+
+<body class="bg-gray-100 p-8 font-sans dark:bg-gray-900">
+    <div class="max-w-xl mx-auto">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-4 dark:bg-gray-800">
+            <form id="add-todo-form">
+                <div class="flex flex-col space-y-4 mb-4">
+                    <input type="text" name="title" placeholder="Title" required
+                        class="border border-gray-300 rounded-lg p-2 w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100">
+                    <textarea name="content" placeholder="Content" required
+                        class="border border-gray-300 rounded-lg p-2 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit"
+                        class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Add Todo
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="max-w-xl mx-auto">
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">My Todo List</h1>
+            <div id="todos-container">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
