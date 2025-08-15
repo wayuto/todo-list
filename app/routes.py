@@ -1,26 +1,13 @@
 from flask import (
-    Flask,
     render_template,
-    send_from_directory,
     request,
     jsonify,
     Blueprint,
 )
 from . import db
 from .models import Item
-import os
 
 bp = Blueprint("routes", __name__)
-
-
-@bp.route("/favicon.ico")
-def favicon():
-    return send_from_directory(
-        os.path.join(bp.root_path, "static"),
-        "favicon.ico",
-        mimetype="image/vnd.microsoft.icon",
-    )
-
 
 @bp.route("/")
 def index():
